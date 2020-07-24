@@ -1,0 +1,47 @@
+{
+  "name": "todo_vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centerRyo/Todo_Vue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/centerRyo/Todo_Vue/issues"
+  },
+  "homepage": "https://github.com/centerRyo/Todo_Vue#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.19",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.26.10",
+    "browserify": "^16.5.1",
+    "eslint": "^7.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-webpack": "^1.5.0",
+    "vue-devtools": "^5.1.4",
+    "webpack": "^3.9.1",
+    "webpack-stream": "^5.2.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
