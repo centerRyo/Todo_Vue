@@ -37,7 +37,7 @@
     "gulp-webpack": "^1.5.0",
     "vue-devtools": "^5.1.4",
     "webpack": "^3.9.1",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^4.0.0"
   },
   "babel": {
     "presets": [
