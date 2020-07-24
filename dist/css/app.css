@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0179bf;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+.main {
+  width: 400px;
+  margin: 100px auto;
+}
+
+.mainTitle {
+  text-align: center;
+  color: #fff;
+}
+
+.subTitle {
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+}
+
+.form {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.inputArea {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inputText {
+  width: 100%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.error {
+  display: none;
+  color: #d6d618;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn {
+  background: #5aac44;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 30px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.searchBox {
+  width: 100%;
+  background: #fff;
+  height: 40px;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.searchBox__icon {
+  width: 16px;
+  font-size: 18px;
+  color: #333;
+  margin-right: 5px;
+}
+
+.searchBox__input {
+  width: calc(100% - 30px);
+  height: 100%;
+  border: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.todoArea {
+  overflow: hidden;
+  background: #ebecf0;
+  padding: 15px 15px 0;
+  margin-top: 40px;
+  border-radius: 3px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list__item {
+  overflow: hidden;
+  padding: 10px 15px;
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  transition: .5s;
+}
+
+.list__item:hover {
+  transform: scale(1.02);
+  transition: .5s;
+}
+
+.list__item--done {
+  background: #c1c1c1;
+  color: #888;
+}
+
+.icon-check, .icon-trash {
+  cursor: pointer;
+  transition: .5s;
+}
+
+.icon-check:hover, .icon-trash:hover {
+  transform: scale(1.2);
+  transition: .5s;
+}
+
+.icon-trash {
+  float: right;
+  color: #f14343;
+  position: relative;
+  top: 5px;
+}
+
+.icon-check {
+  margin-right: 5px;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+
+.editText {
+  display: none;
+  width: 80%;
+  height: 100%;
+  border: none;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
