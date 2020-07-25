@@ -21,6 +21,11 @@
         <button class="btn" @click="addTask">カードを追加</button>
       </div>
 
+      <div class="searchBox">
+        <i class="fas fa-search searchBox__icon" aria-hidden="true"></i>
+        <input type="text" class="searchBox__input">
+      </div>
+
       <div class="labels">
         <label v-for="label in options" class="label">
           <input class="label-Input" type="radio" v-model="current" :value="label.value">
