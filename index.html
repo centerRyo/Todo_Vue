@@ -14,8 +14,11 @@
     <div id="app">
       <div class="todoArea">
         <ul class="list">
-          <li class="list__item">
-            
+          <li class="list__item" v-for="item in todos" :key="item.id">
+            <i class="far fa-circle icon-check" aria-hidden="true"></i>
+            <span>{{ item.text }}</span>
+            <input type="text" class="editText">
+            <i class="fas fa-trash-alt icon-trash" aria-hidden="true"></i>
           </li>
         </ul>
       </div>
