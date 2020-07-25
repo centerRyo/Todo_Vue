@@ -43,7 +43,6 @@ body {
 }
 
 .error {
-  display: none;
   color: #d6d618;
   font-weight: bold;
   font-size: 16px;
@@ -175,6 +174,7 @@ body {
 .label-Input:checked + .label-DummyInput {
   background: #5aac44;
 }
+
 .label-Input:checked + .label-DummyInput::before {
   content: "";
   display: inline-block;
@@ -187,6 +187,7 @@ body {
   border-radius: 50%;
   background: #fff;
 }
+
 .label-DummyInput {
   position: relative;
   top: 0;
@@ -197,6 +198,7 @@ body {
   border-radius: 50%;
   background: #ddd;
 }
+
 .label-LabelText {
   color: #fff;
   margin-left: 5px;

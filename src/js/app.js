@@ -27,12 +27,14 @@ new Vue({
       { value: 0, label: '未完了' },
       { value: 1, label: '完了' },
     ],
-    current: -1
+    current: -1,
+    errors: ''
   },
   methods: {
     addTask() {
       let text = this.$refs.text;
       if (!text.value.length) {
+        this.errors = '入力してください';
         return;
       }
       this.todos.push({
@@ -42,6 +44,7 @@ new Vue({
         isEdit: false
       });
       text.value = '';
+      this.errors = '';
     },
     toggleTask(item) {
       item.state = item.state ? 0 : 1;

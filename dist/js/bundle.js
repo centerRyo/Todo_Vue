@@ -314,12 +314,14 @@ new _vue2.default({
   data: {
     todos: [],
     options: [{ value: -1, label: 'すべて' }, { value: 0, label: '未完了' }, { value: 1, label: '完了' }],
-    current: -1
+    current: -1,
+    errors: ''
   },
   methods: {
     addTask: function addTask() {
       var text = this.$refs.text;
       if (!text.value.length) {
+        this.errors = '入力してください';
         return;
       }
       this.todos.push({
@@ -329,6 +331,7 @@ new _vue2.default({
         isEdit: false
       });
       text.value = '';
+      this.errors = '';
     },
     toggleTask: function toggleTask(item) {
       item.state = item.state ? 0 : 1;

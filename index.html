@@ -16,7 +16,7 @@
       <div class="form">
         <div class="inputArea">
           <input class="inputText" type="text" ref="text" @keypress.enter="addTask" placeholder="このカードにタイトルを入力...">
-          <span class="error">入力してください</span>
+          <span class="error" v-if="errors">{{ errors }}</span>
         </div>
         <button class="btn" @click="addTask">カードを追加</button>
       </div>
