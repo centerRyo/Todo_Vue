@@ -36,6 +36,13 @@ new Vue({
         isEdit: false
       });
       text.value = '';
+    },
+    toggleTask(item) {
+      item.state = item.state ? 0 : 1;
+    },
+    removeTask(item) {
+      let index = this.todos.indexOf(item);
+      this.todos.splice(index, 1);
     }
   },
   watch: {

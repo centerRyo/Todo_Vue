@@ -327,6 +327,13 @@ new _vue2.default({
         isEdit: false
       });
       text.value = '';
+    },
+    toggleTask: function toggleTask(item) {
+      item.state = item.state ? 0 : 1;
+    },
+    removeTask: function removeTask(item) {
+      var index = this.todos.indexOf(item);
+      this.todos.splice(index, 1);
     }
   },
   watch: {
