@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trello風Todoアプリ</title>
   <link rel="stylesheet" href="dist/css/app.css">
+  <script src="https://kit.fontawesome.com/931c61dabd.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="main">
@@ -12,6 +13,14 @@
     <p class="subTitle">〜 vue.js version 〜</p>
 
     <div id="app">
+      <div class="form">
+        <div class="inputArea">
+          <input class="inputText" type="text" ref="text" @keypress.enter="addTask" placeholder="このカードにタイトルを入力...">
+          <span class="error">入力してください</span>
+        </div>
+        <button class="btn" @click="addTask">カードを追加</button>
+      </div>
+
       <div class="todoArea">
         <ul class="list">
           <li class="list__item" v-for="item in todos" :key="item.id">
