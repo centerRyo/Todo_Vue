@@ -21,6 +21,13 @@
         <button class="btn" @click="addTask">カードを追加</button>
       </div>
 
+      <div class="labels">
+        <label v-for="label in options" class="label">
+          <input class="label-Input" type="radio" v-model="current" :value="label.value">
+          <span class="label-DummyInput"></span><span class="label-LabelText">{{ label.label }}</span>
+        </label>
+      </div>
+
       <div class="todoArea">
         <ul class="list">
           <li class="list__item" v-for="item in todos" :key="item.id" :class="{ 'list__item--done': item.state }">

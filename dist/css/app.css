@@ -94,7 +94,6 @@ body {
   overflow: hidden;
   background: #ebecf0;
   padding: 15px 15px 0;
-  margin-top: 40px;
   border-radius: 3px;
 }
 
@@ -156,4 +155,53 @@ body {
   padding: 5px 15px;
   box-sizing: border-box;
   font-size: 16px;
+}
+
+.labels {
+  margin-bottom: 10px;
+}
+
+.label {
+  padding-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.label-Input {
+  width: 0;
+  margin: 0;
+}
+
+.label-Input:checked + .label-DummyInput {
+  background: #5aac44;
+}
+.label-Input:checked + .label-DummyInput::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.label-DummyInput {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+}
+.label-LabelText {
+  color: #fff;
+  margin-left: 5px;
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
+  top: -4px;
 }
