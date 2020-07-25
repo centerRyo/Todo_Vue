@@ -312,7 +312,9 @@ var todoStorage = {
 new _vue2.default({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [{ value: -1, label: 'すべて' }, { value: 0, label: '未完了' }, { value: 1, label: '完了' }],
+    current: -1
   },
   methods: {
     addTask: function addTask() {
@@ -334,6 +336,15 @@ new _vue2.default({
     removeTask: function removeTask(item) {
       var index = this.todos.indexOf(item);
       this.todos.splice(index, 1);
+    }
+  },
+  computed: {
+    filterTodos: function filterTodos() {
+      var _this = this;
+
+      return this.todos.filter(function (el) {
+        return _this.current < 0 ? true : _this.current === el.state;
+      });
     }
   },
   watch: {

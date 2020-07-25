@@ -21,7 +21,13 @@ let todoStorage = {
 new Vue({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [
+      { value: -1, label: 'すべて' },
+      { value: 0, label: '未完了' },
+      { value: 1, label: '完了' },
+    ],
+    current: -1
   },
   methods: {
     addTask() {
@@ -43,6 +49,13 @@ new Vue({
     removeTask(item) {
       let index = this.todos.indexOf(item);
       this.todos.splice(index, 1);
+    }
+  },
+  computed: {
+    filterTodos: function() {
+      return this.todos.filter((el) => {
+        return this.current < 0 ? true : this.current === el.state;
+      });
     }
   },
   watch: {

@@ -30,7 +30,7 @@
 
       <div class="todoArea">
         <ul class="list">
-          <li class="list__item" v-for="item in todos" :key="item.id" :class="{ 'list__item--done': item.state }">
+          <li class="list__item" v-for="item in filterTodos" :key="item.id" :class="{ 'list__item--done': item.state }">
             <i class="far icon-check" :class="{ 'fa-check-circle': item.state, 'fa-circle': !item.state }" @click="toggleTask(item)" aria-hidden="true"></i>
             <span>{{ item.text }}</span>
             <input type="text" class="editText">
