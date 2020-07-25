@@ -314,7 +314,32 @@ new _vue2.default({
   data: {
     todos: []
   },
-  methods: {}
+  methods: {
+    addTask: function addTask() {
+      var text = this.$refs.text;
+      if (!text.value.length) {
+        return;
+      }
+      this.todos.push({
+        id: todoStorage.uid++,
+        text: text.value,
+        state: 0,
+        isEdit: false
+      });
+      text.value = '';
+    }
+  },
+  watch: {
+    todos: {
+      handler: function handler(todos) {
+        todoStorage.save(todos);
+      },
+      deep: true
+    }
+  },
+  created: function created() {
+    this.todos = todoStorage.fetch();
+  }
 });
 
 /***/ }),

@@ -1,10 +1,10 @@
 import Vue from 'vue';
 
 // ローカルストレージAPIを使用する
-var STORAGE_KEY = 'todo_vue';
-var todoStorage = {
+const STORAGE_KEY = 'todo_vue';
+let todoStorage = {
   fetch: function() {
-    var todos = JSON.parse(
+    let todos = JSON.parse(
       localStorage.getItem(STORAGE_KEY) || '[]'
     );
     todos.forEach(function(todo, index) {
@@ -24,6 +24,29 @@ new Vue({
     todos: []
   },
   methods: {
-
+    addTask() {
+      let text = this.$refs.text;
+      if (!text.value.length) {
+        return;
+      }
+      this.todos.push({
+        id: todoStorage.uid++,
+        text: text.value,
+        state: 0,
+        isEdit: false
+      });
+      text.value = '';
+    }
+  },
+  watch: {
+    todos: {
+      handler: function(todos) {
+        todoStorage.save(todos);
+      },
+      deep: true
+    }
+  },
+  created() {
+    this.todos = todoStorage.fetch();
   }
 });
