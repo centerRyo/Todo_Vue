@@ -28,7 +28,8 @@ new Vue({
       { value: 1, label: '完了' },
     ],
     current: -1,
-    errors: ''
+    errors: '',
+    searchText: ''
   },
   methods: {
     addTask() {
@@ -41,7 +42,7 @@ new Vue({
         id: todoStorage.uid++,
         text: text.value,
         state: 0,
-        isEdit: false
+        editMode: false
       });
       text.value = '';
       this.errors = '';
@@ -52,12 +53,26 @@ new Vue({
     removeTask(item) {
       let index = this.todos.indexOf(item);
       this.todos.splice(index, 1);
+    },
+    showEditTask(item) {
+      item.editMode = true;
+    },
+    closeEditTask(item) {
+      item.text = item.text;
+      item.editMode = false;
     }
   },
   computed: {
     filterTodos: function() {
-      return this.todos.filter((el) => {
+      // 完了未完了で検索
+      let data = this.todos.filter((el) => {
         return this.current < 0 ? true : this.current === el.state;
+      });
+
+      // 検索ワードで検索
+      const regexp = new RegExp('^' + this.searchText, 'i');
+      return data.filter(function(elm) {
+        return elm.text.match(regexp);
       });
     }
   },

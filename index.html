@@ -23,7 +23,7 @@
 
       <div class="searchBox">
         <i class="fas fa-search searchBox__icon" aria-hidden="true"></i>
-        <input type="text" class="searchBox__input">
+        <input type="text" class="searchBox__input" v-model="searchText">
       </div>
 
       <div class="labels">
@@ -37,8 +37,8 @@
         <ul class="list">
           <li class="list__item" v-for="item in filterTodos" :key="item.id" :class="{ 'list__item--done': item.state }">
             <i class="far icon-check" :class="{ 'fa-check-circle': item.state, 'fa-circle': !item.state }" @click="toggleTask(item)" aria-hidden="true"></i>
-            <span>{{ item.text }}</span>
-            <input type="text" class="editText">
+            <span v-if="!item.editMode" @click="showEditTask(item)">{{ item.text }}</span>
+            <input type="text" class="editText" v-if="item.editMode" v-model="item.text" v-on:keyup.enter.shift="closeEditTask(item)">
             <i class="fas fa-trash-alt icon-trash" @click="removeTask(item)" aria-hidden="true"></i>
           </li>
         </ul>

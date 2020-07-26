@@ -315,7 +315,8 @@ new _vue2.default({
     todos: [],
     options: [{ value: -1, label: 'すべて' }, { value: 0, label: '未完了' }, { value: 1, label: '完了' }],
     current: -1,
-    errors: ''
+    errors: '',
+    searchText: ''
   },
   methods: {
     addTask: function addTask() {
@@ -328,7 +329,7 @@ new _vue2.default({
         id: todoStorage.uid++,
         text: text.value,
         state: 0,
-        isEdit: false
+        editMode: false
       });
       text.value = '';
       this.errors = '';
@@ -339,14 +340,28 @@ new _vue2.default({
     removeTask: function removeTask(item) {
       var index = this.todos.indexOf(item);
       this.todos.splice(index, 1);
+    },
+    showEditTask: function showEditTask(item) {
+      item.editMode = true;
+    },
+    closeEditTask: function closeEditTask(item) {
+      item.text = item.text;
+      item.editMode = false;
     }
   },
   computed: {
     filterTodos: function filterTodos() {
       var _this = this;
 
-      return this.todos.filter(function (el) {
+      // 完了未完了で検索
+      var data = this.todos.filter(function (el) {
         return _this.current < 0 ? true : _this.current === el.state;
+      });
+
+      // 検索ワードで検索
+      var regexp = new RegExp('^' + this.searchText, 'i');
+      return data.filter(function (elm) {
+        return elm.text.match(regexp);
       });
     }
   },
