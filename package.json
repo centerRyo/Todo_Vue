@@ -30,7 +30,7 @@
     "browser-sync": "^3.0.2",
     "browserify": "^16.5.1",
     "eslint": "^8.41.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-eslint": "^4.0.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
