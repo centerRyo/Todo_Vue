@@ -19,7 +19,7 @@
   "dependencies": {
     "jquery": "^3.5.1",
     "lodash": "^4.17.21",
-    "vue": "^2.6.11"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
